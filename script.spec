@@ -4,8 +4,8 @@
 block_cipher = None
 
 
-a = Analysis(['rename.py'],
-             pathex=['C:\\Users\\josea\\Documents\\ANDRÉ\\script_renomearArquivos'],
+a = Analysis(['script.py'],
+             pathex=['C:\\Users\\josea\\Documents\\ANDRÉ\\script'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -24,7 +24,7 @@ exe = EXE(pyz,
           a.scripts, 
           [],
           exclude_binaries=True,
-          name='rename',
+          name='script',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -41,4 +41,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='rename')
+               name='script')

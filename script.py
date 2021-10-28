@@ -3,7 +3,6 @@ import os
 import shutil
 from PySimpleGUI import PySimpleGUI as sg
 
-
 #Layout
 sg.theme('Reddit')
 layout = [
@@ -41,14 +40,28 @@ while True:
       return f'{new_file}{file_extension}'
 
     def file_loop(root, dirs, files):
+      count = 1
+      current_file = ''
+      previous_file = ''
+      
       for file in files:
         new_file_name = rename_file(file)
+        previous_file = current_file
+        current_file = new_file_name
+
+        if current_file == previous_file:
+          count += 1
+          file_name, file_extension = os.path.splitext(new_file_name)
+          new_file_name = f'{file_name}({count}){file_extension}'
+        else:
+          count = 1
+
         old_file_fill_path = os.path.join(root, file)
         new_file_fill_path = os.path.join(root, new_file_name)
 
         print(f'RENOMEANDO: {file} para: {new_file_name}') 
         shutil.move(old_file_fill_path, new_file_fill_path)
-
+      
 
     def main_loop():
       for root, dirs, files in os.walk(main_folder):
@@ -61,6 +74,6 @@ while True:
     print('FINALIZADO!!!')
 
 
-
-# main_folder = r'C:\\Users\\josea\\Documents\\ANDRÉ\\script_renomearArquivos\\arquivos'
-# C:\Users\josea\Documents\ANDRÉ\script_renomearArquivos\arquivos
+# Script desenvolvido por José André
+# Github: https://github.com/joseandre1706
+# Linkedin: www.linkedin.com/in/josé-andré-psn
