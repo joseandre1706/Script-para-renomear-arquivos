@@ -1,4 +1,3 @@
-import re
 import os
 import shutil
 from PySimpleGUI import PySimpleGUI as sg
@@ -39,7 +38,7 @@ while True:
         index +=1
       return f'{new_file}{file_extension}'
 
-    def file_loop(root, dirs, files):
+    def file_loop(root, files):
       count = 1
       current_file = ''
       previous_file = ''
