@@ -19,7 +19,7 @@ O script foi desenvolvido para renomear especificamente os arquivos que trabalha
 O script foi desenvolvido para trabalhar com arquivos que foram nomeado no formato "comprovante_1235522_625415946532", ele irá apagar tudo que tem a partir do segundo underline, assim ficará "comprovante_1235522".
 
 ### Passo a passo:
-> * execute o sript;
+> * execute o script;
 > * copie o endereço da pasta que você quer renomear;
 > * cole o endereço da pasta no campo dentro do script;
 > * clique no botão 'Renomear';
